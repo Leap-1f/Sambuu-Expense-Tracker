@@ -1,4 +1,5 @@
 import express, { request, response } from "express";
+import bcrypt from "bcrypt";
 import { sql } from "./config/database.js";
 import { user } from "./src/router/user.js";
 
@@ -6,6 +7,10 @@ const app = express();
 const port = 8080;
 
 app.use("/users", user);
+
+app.listen(port, () => {
+  console.log(`aslaa http://localhost:${port}`);
+});
 
 // app.get("/users", async (request, response) => {
 //   const data = await sql`SELECT * FROM users`;
@@ -32,7 +37,3 @@ app.use("/users", user);
 //   console.log(data);
 //   response.send(data);
 // });
-
-app.listen(port, () => {
-  console.log(`aslaa http://localhost:${port}`);
-});

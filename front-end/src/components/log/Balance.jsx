@@ -26,7 +26,7 @@ export const Balance = () => {
             </h1>
             <div className="mb-4">
               <label className="input input-bordered flex items-center gap-2 bg-[#F3F4F6] w-full">
-                <input type="text" className="grow" placeholder="Email" />
+                <input type="text" className="grow" placeholder="Cash" />
               </label>
             </div>
             <p className=" text-xs font-normal flex text-center">
