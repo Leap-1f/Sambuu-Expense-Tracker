@@ -1,12 +1,27 @@
-import express, { request, response } from "express";
+import express from "express";
 import bcrypt from "bcrypt";
 import { sql } from "./config/database.js";
 import { user } from "./src/router/user.js";
 
+const DATABASE_URL = "./database.json";
 const app = express();
 const port = 8080;
 
+app.use(express.json());
 app.use("/users", user);
+
+app.get("/users", async (request, response) => {
+  const data = await sql`SELECT * FROM users`;
+  console.log(data);
+  response.send(data);
+});
+
+app.post("/users", async (request, response) => {
+  const data =
+    await sql`INSERT INTO users (name,email,password) VALUES ('ASambuu', 'asambuu@gmail.com','sambuu973742') RETURNING *`;
+  console.log(data);
+  response.send(data);
+});
 
 app.listen(port, () => {
   console.log(`aslaa http://localhost:${port}`);

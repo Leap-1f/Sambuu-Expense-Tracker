@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const LogIn = () => {
   return (
     <div className="flex">
@@ -20,17 +21,21 @@ export const LogIn = () => {
               <input type="text" className="grow" placeholder="Email" />
             </label>
             <label className="input input-bordered flex items-center gap-2 bg-[#F3F4F6]">
-              <input type="password" className="grow" value="password" />
+              <input type="password" className="grow" placeholder="password" />
             </label>
-            <button className="btn btn-info w-[100%] rounded-[20px]">
-              Log in
-            </button>
+            <Link href="/dashboard">
+              <button className="btn btn-info w-[100%] rounded-[20px]">
+                Log in
+              </button>
+            </Link>
           </div>
           <div className="flex justify-center gap-3">
             <p className=" text-base font-normal text-[#0F172A]">
               Don’t have account ?
             </p>
-            <p className=" text-base font-normal text-[#0166FF]">Sign up</p>
+            <Link href="/singup">
+              <p className=" text-base font-normal text-[#0166FF]">Sign up</p>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,14 +1,37 @@
-export const Records = ({ Category }) => {
+import { useState } from "react";
+import { AddRecord } from "./AddRecord";
+import { TrueCategory } from ".";
+export const Records = ({ category }) => {
+  const [showAddRecord, setShowAddRecord] = useState(false);
+  const open = () => {
+    setShowAddRecord(!showAddRecord);
+  };
+  const close = () => {
+    setShowAddRecord(!showAddRecord);
+  };
+
+  const [showAddCategory, setShowAddCategory] = useState(false);
+  const openCategory = () => {
+    setShowAddCategory(!showAddCategory);
+  };
+  const closeCategory = () => {
+    setShowAddCategory(!showAddCategory);
+  };
+
   return (
     <div className="bg-[#F3F4F6] flex justify-center">
-      <div className=" absolute bg-[rgba(0,0,0,0.5)] w-full h-full mt-[-80px]">
-        dslajkvhd
-      </div>
+      {showAddRecord && <AddRecord close={close} open={open}></AddRecord>}
+      {showAddCategory && (
+        <TrueCategory closeCategory={closeCategory}></TrueCategory>
+      )}
       <div className="w-[54%] flex justify-between">
         <div className="w-[23.3%] mt-6 px-4 py-6 bg-white rounded-xl">
           <div>
             <h1 className="text-2xl font-semibold mb-6">Records</h1>
-            <button className="btn btn-info btn-sm w-[100%] rounded-[20px] mb-6">
+            <button
+              onClick={open}
+              className="btn btn-info btn-sm w-[100%] rounded-[20px] mb-6"
+            >
               <img src="/wplus.svg" alt="" />
               <h1 className="text-base text-white font-normal">Add</h1>
             </button>
@@ -19,7 +42,7 @@ export const Records = ({ Category }) => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="w-4 h-4 opacity-70"
+              className="w-4 h-4 "
             >
               <path
                 fillRule="evenodd"
@@ -72,11 +95,11 @@ export const Records = ({ Category }) => {
               <h1 className="text-base font-normal text-[#1F2937]">Clear</h1>
             </div>
             <div>
-              {Category.map((el) => {
+              {category.map((el) => {
                 return (
                   <div>
-                    <div className="flex justify-between">
-                      <div className="flex gap-2 p-3">
+                    <div className="flex justify-between cursor-pointer">
+                      <div className="flex gap-2 p-3 ">
                         <img src="/eye.svg" alt="" />
                         <h1>{el.name}</h1>
                       </div>
@@ -85,7 +108,10 @@ export const Records = ({ Category }) => {
                   </div>
                 );
               })}
-              <div className="flex gap-2 p-3">
+              <div
+                onClick={openCategory}
+                className="flex gap-2 p-3 cursor-pointer"
+              >
                 <img src="/plus.svg" alt="" />
                 <h1>Add Category</h1>
               </div>
@@ -105,6 +131,13 @@ export const Records = ({ Category }) => {
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
+            {/* <input
+              type="range"
+              min={0}
+              max="100"
+              value="40"
+              className="range"
+            /> */}
           </div>
         </div>
         <div className="w-[74%]">
@@ -198,5 +231,3 @@ export const Records = ({ Category }) => {
     </div>
   );
 };
-// background-color: rgba(0, 0, 0, 0.7);
-//   position: absolute;

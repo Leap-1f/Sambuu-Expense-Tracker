@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const SingUp = () => {
   return (
     <div className="flex">
@@ -29,18 +30,22 @@ export const SingUp = () => {
               <input
                 type="password"
                 className="grow"
-                placeholder="Re-assword"
+                placeholder="Re-password"
               />
             </label>
-            <button className="btn btn-info w-[100%] rounded-[20px]">
-              Sign up
-            </button>
+            <Link href="/currency">
+              <button className="btn btn-info w-[100%] rounded-[20px]">
+                Sign up
+              </button>
+            </Link>
           </div>
           <div className="flex justify-center gap-3">
             <p className=" text-base font-normal text-[#0F172A]">
               Already have account ?
             </p>
-            <p className=" text-base font-normal text-[#0166FF]">Log in</p>
+            <Link href="/">
+              <p className=" text-base font-normal text-[#0166FF]">Log in</p>
+            </Link>
           </div>
         </div>
       </div>
@@ -48,3 +53,49 @@ export const SingUp = () => {
     </div>
   );
 };
+
+// import React from "react";
+// import * as Yup from "yup";
+
+// const emailSchema = Yup.object().shape({
+//   email: Yup.string()
+//     .email("Please enter a valid email")
+//     .required("Email is required"),
+// });
+
+// export const SingUp = () => {
+//   const [email, setEmail] = React.useState("");
+//   const [emailError, setEmailError] = React.useState("");
+
+//   const onChange = ({ target }) => {
+//     setEmail(target.value);
+//     emailSchema
+//       .validate({ email: target.value })
+//       .then(() => setEmailError(""))
+//       .catch((err) => setEmailError(err.errors[0]));
+//   };
+
+//   return (
+//     <div className="flex flex-col items-center">
+//       <input
+//         type="email"
+//         label="Email"
+//         value={email}
+//         onChange={onChange}
+//         className="w-full max-w-[24rem] pr-20"
+//         containerProps={{
+//           className: "min-w-0",
+//         }}
+//       />
+//       {emailError && <p className="text-red-500">{emailError}</p>}
+//       <button
+//         size="sm"
+//         color={email ? "blue" : "gray"}
+//         disabled={!email}
+//         className="mt-4 w-full rounded-[20px]"
+//       >
+//         Sign up
+//       </button>
+//     </div>
+//   );
+// };

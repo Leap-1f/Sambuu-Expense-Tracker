@@ -28,12 +28,18 @@ export const Dashboard = ({ last }) => {
     ],
   };
   const Doug = {
-    labels: ["Bills", "Food", "Shopping", "Insurance", "Clothing"],
+    // labels: ["Bills", "Food", "Shopping", "Insurance", "Clothing"],
     datasets: [
       {
         label: "",
         data: [5000000, 5000000, 5000000, 5000000, 5000000],
-        backgroundColor: "#84CC16",
+        backgroundColor: [
+          "#1C64F2",
+          "#E74694",
+          "#FDBA8C",
+          "#16BDCA",
+          "#F2901C",
+        ],
       },
     ],
   };
@@ -56,9 +62,7 @@ export const Dashboard = ({ last }) => {
                 </div>
                 <div className="pt-[80px]">
                   <p className="text-blue-200 text-base font-normal">Cash</p>
-                  <h1 className="text-white text-2xl font-semibold">
-                    10,000,00
-                  </h1>
+                  <h1 className="text-white text-2xl font-semibold">10,000</h1>
                 </div>
               </div>
               <div className="flex items-end">
@@ -115,8 +119,36 @@ export const Dashboard = ({ last }) => {
             <div className="px-6 py-4 border-[1px] border-slate-200 border-x-white border-t-white rounded-t-xl">
               <h1 className="text-base font-semibold">Income - Expense</h1>
             </div>
-            <div className="px-6 py-8 h-[300px]">
-              <Doughnut data={Doug} />
+            <div className="px-6 py-8 h-[300px] flex justify-between">
+              <Doughnut data={Doug}> </Doughnut>
+              <div className=" *:w-3 *:h-3 flex gap-7 flex-col justify-center *:rounded-[50%]">
+                <div className="bg-[#1C64F2]"></div>
+                <div className="bg-[#E74694]"></div>
+                <div className="bg-[#FDBA8C]"></div>
+                <div className="bg-[#16BDCA]"></div>
+                <div className="bg-[#F2901C]"></div>
+              </div>
+              <ul className="flex gap-4 flex-col justify-center">
+                <li>Bills</li>
+                <li>Food</li>
+                <li>Shopping</li>
+                <li>Insurance</li>
+                <li>Clothing</li>
+              </ul>
+              <ul className="flex gap-4 flex-col justify-center">
+                <li>50000₮</li>
+                <li>50000₮</li>
+                <li>50000₮</li>
+                <li>50000₮</li>
+                <li>50000₮</li>
+              </ul>
+              <ul className=" flex gap-4 flex-col justify-center ">
+                <li>15.50%</li>
+                <li>15.50%</li>
+                <li>15.50%</li>
+                <li>15.50%</li>
+                <li>15.50%</li>
+              </ul>
             </div>
           </div>
         </div>
