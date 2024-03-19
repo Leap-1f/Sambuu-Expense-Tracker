@@ -18,6 +18,16 @@ export const Records = ({ category }) => {
     setShowAddCategory(!showAddCategory);
   };
 
+  const [isChecked, setIsChecked] = useState(false);
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const [selectedType, setSelectedType] = useState("default");
+  const handleTypeChange = (event) => {
+    setSelectedType(event.target.value);
+  };
+
   return (
     <div className="bg-[#F3F4F6] flex justify-center">
       {showAddRecord && <AddRecord close={close} open={open}></AddRecord>}
@@ -59,8 +69,10 @@ export const Records = ({ category }) => {
                   <input
                     type="radio"
                     name="theme-radios"
-                    className="radio theme-controller radio-xs"
+                    className="theme-controller  radio-sm"
                     value="default"
+                    checked={selectedType === "default"}
+                    onChange={handleTypeChange}
                   />
                   <span className="label-text">All</span>
                 </label>
@@ -70,8 +82,10 @@ export const Records = ({ category }) => {
                   <input
                     type="radio"
                     name="theme-radios"
-                    className="radio theme-controller radio-xs"
+                    className="theme-controller radio-sm"
                     value="retro"
+                    checked={selectedType === "default"}
+                    onChange={handleTypeChange}
                   />
                   <span className="label-text">Income</span>
                 </label>
@@ -81,8 +95,10 @@ export const Records = ({ category }) => {
                   <input
                     type="radio"
                     name="theme-radios"
-                    className="radio theme-controller radio-xs"
+                    className="theme-controller  radio-sm"
                     value="cyberpunk"
+                    checked={selectedType === "default"}
+                    onChange={handleTypeChange}
                   />
                   <span className="label-text">Expense</span>
                 </label>
@@ -154,7 +170,11 @@ export const Records = ({ category }) => {
             </div>
             <div className="flex justify-between bg-white px-6 py-3 rounded-xl">
               <div className="flex gap-4">
-                <input type="checkbox" defaultChecked className="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={handleCheckboxChange}
+                  className="w-6 h-6 "
+                />
                 <h1>Select all</h1>
               </div>
               <h1 className="font-semibold">- 35,500₮</h1>
@@ -164,7 +184,11 @@ export const Records = ({ category }) => {
             <h1 className="py-3">Today</h1>
             <div className="flex justify-between bg-white px-6 py-3 items-center rounded-xl mb-3">
               <div className="flex gap-4 items-center">
-                <input type="checkbox" defaultChecked className="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={handleCheckboxChange}
+                  className="w-6 h-6 "
+                />
                 <div className="w-10 h-10 bg-[#0166FF] rounded-[50%] flex justify-center items-center">
                   <img src="/House.svg" alt="" />
                 </div>
@@ -179,7 +203,11 @@ export const Records = ({ category }) => {
             </div>
             <div className="flex justify-between bg-white px-6 py-3 items-center rounded-xl">
               <div className="flex gap-4 items-center">
-                <input type="checkbox" defaultChecked className="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={handleCheckboxChange}
+                  className="w-6 h-6 "
+                />
                 <div className="w-10 h-10 bg-[#FF4545] rounded-[50%] flex justify-center items-center">
                   <img src="/fork.svg" alt="" />
                 </div>
@@ -197,7 +225,11 @@ export const Records = ({ category }) => {
             <h1 className="py-3">Yesterday</h1>
             <div className="flex justify-between bg-white px-6 py-3 items-center rounded-xl mb-3">
               <div className="flex gap-4 items-center">
-                <input type="checkbox" defaultChecked className="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={handleCheckboxChange}
+                  className="w-6 h-6 "
+                />
                 <div className="w-10 h-10 bg-[#FF4545] rounded-[50%] flex justify-center items-center">
                   <img src="/fork.svg" alt="" />
                 </div>
@@ -212,7 +244,11 @@ export const Records = ({ category }) => {
             </div>
             <div className="flex justify-between bg-white px-6 py-3 items-center rounded-xl">
               <div className="flex gap-4 items-center">
-                <input type="checkbox" defaultChecked className="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={handleCheckboxChange}
+                  className="w-6 h-6 "
+                />
                 <div className="w-10 h-10 bg-[#FF4545] rounded-[50%] flex justify-center items-center">
                   <img src="/fork.svg" alt="" />
                 </div>

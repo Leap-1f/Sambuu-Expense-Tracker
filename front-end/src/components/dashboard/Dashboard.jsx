@@ -16,12 +16,12 @@ export const Dashboard = ({ last }) => {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "jul"],
     datasets: [
       {
-        label: "Revenue",
+        label: "Income",
         data: [2800000, 2800000, 2800000, 2800000, 2800000, 2800000, 2800000],
         backgroundColor: "#84CC16",
       },
       {
-        label: "loss",
+        label: "Expense",
         data: [1800000, 1800000, 1800000, 1800000, 1800000, 1800000, 1800000],
         backgroundColor: "#F97316",
       },

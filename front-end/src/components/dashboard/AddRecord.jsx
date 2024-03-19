@@ -144,7 +144,52 @@ export const AddRecord = ({ close }) => {
                   <AiOutlineCaretDown />
                 </button>
                 <dialog id="my_modal_2" className="modal">
-                  <div className="modal-box">aaaa aaaaa aaa</div>
+                  <div className="modal-box">
+                    <div className="  *:cursor-pointer">
+                      <div className="flex gap-3 pb-6 border-[1px] border-slate-200 border-x-white border-t-white rounded-t-xl">
+                        <div className=" text-2xl text-[#0166FF]">
+                          <FaCirclePlus />
+                        </div>
+                        <h1>Add Category</h1>
+                      </div>
+                      <div className="flex gap-3 my-6">
+                        <div className=" text-2xl text-[#0166FF]">
+                          <FaHouse />
+                        </div>
+                        <h1>Home</h1>
+                      </div>
+                      <div className="flex gap-3 my-6">
+                        <div className=" text-2xl text-[#FF4545]">
+                          <PiGiftFill />
+                        </div>
+                        <h1>Gift</h1>
+                      </div>
+                      <div className="flex gap-3 my-6">
+                        <div className=" text-2xl text-[#FB8A22]">
+                          <PiForkKnifeFill />
+                        </div>
+                        <h1>Food</h1>
+                      </div>
+                      <div className="flex gap-3 my-6">
+                        <div className=" text-2xl text-[#A804AB]">
+                          <FaWineGlassAlt />
+                        </div>
+                        <h1>Drink</h1>
+                      </div>
+                      <div className="flex gap-3 my-6">
+                        <div className=" text-2xl text-[#EAB308]">
+                          <PiTaxiFill />
+                        </div>
+                        <h1>Taxi</h1>
+                      </div>
+                      <div className="flex gap-3 mt-6">
+                        <div className=" text-2xl text-[#6F6CF3]">
+                          <PiTShirtFill />
+                        </div>
+                        <h1>Shopping</h1>
+                      </div>
+                    </div>
+                  </div>
                   <form method="dialog" className="modal-backdrop">
                     <button>close</button>
                   </form>
