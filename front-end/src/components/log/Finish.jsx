@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const Finish = () => {
   return (
     <div>
@@ -9,9 +10,9 @@ export const Finish = () => {
               <img src="/Geld.svg" alt="" />
             </div>
             <ul className="steps *:text-sm ">
-              <li className="step step-info">Currency</li>
-              <li className="step step-info">Balance</li>
-              <li className="step step-info">Finish</li>
+              <li className="step step-info w-[240px]">Currency</li>
+              <li className="step step-info w-[240px]">Balance</li>
+              <li className="step step-info w-[240px]">Finish</li>
             </ul>
           </div>
 
@@ -26,9 +27,11 @@ export const Finish = () => {
               Your very first account has been created. Now continue to
               dashboard and start tracking
             </p>
-            <button className="btn btn-info w-[100%] rounded-[20px] mt-8">
-              Go to Dashboard
-            </button>
+            <Link href="/dashboard">
+              <button className="btn btn-info w-[100%] rounded-[20px] mt-8">
+                Go to Dashboard
+              </button>
+            </Link>
           </div>
         </div>
       </div>

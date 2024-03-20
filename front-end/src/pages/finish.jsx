@@ -1,9 +1,8 @@
-import { LogIn } from "@/components/log";
-
+import { Finish } from "@/components/log";
 export default function Home() {
   return (
     <div>
-      <LogIn></LogIn>
+      <Finish></Finish>
     </div>
   );
 }

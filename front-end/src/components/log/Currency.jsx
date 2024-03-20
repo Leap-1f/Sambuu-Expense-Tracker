@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const Currency = () => {
   return (
     <div>
@@ -8,10 +9,12 @@ export const Currency = () => {
               <img src="/Vector.png" alt="" />
               <img src="/Geld.svg" alt="" />
             </div>
-            <ul className="steps *:text-sm ">
-              <li className="step step-info">Currency</li>
-              <li className="step step-info">Balance</li>
-              <li className="step step-info">Finish</li>
+            <ul className="steps *:text-sm  ">
+              <li className="step step-info step-primary w-[240px]">
+                Currency
+              </li>
+              <li className="step step-primary w-[240px]">Balance</li>
+              <li className="step step-primary w-[240px]">Finish</li>
             </ul>
           </div>
 
@@ -29,8 +32,7 @@ export const Currency = () => {
                 <option disabled selected>
                   MNT - Mongolian Tugrik
                 </option>
-                <option>Han Solo</option>
-                <option>Greedo</option>
+                <option>USA </option>
                 <option> MNT - Mongolian Tugrik</option>
               </select>
             </div>
@@ -39,9 +41,11 @@ export const Currency = () => {
               transaction in other currencies will be calculated based on this
               one
             </p>
-            <button className="btn btn-info w-[100%] rounded-[20px] mt-8">
-              Confirm
-            </button>
+            <Link href="/balance">
+              <button className="btn btn-info w-[100%] rounded-[20px] mt-8">
+                Confirm
+              </button>
+            </Link>
           </div>
         </div>
       </div>

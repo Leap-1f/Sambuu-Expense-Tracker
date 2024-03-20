@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const Balance = () => {
   return (
     <div>
@@ -9,12 +10,11 @@ export const Balance = () => {
               <img src="/Geld.svg" alt="" />
             </div>
             <ul className="steps *:text-sm ">
-              <li className="step step-info">Currency</li>
-              <li className="step step-info">Balance</li>
-              <li className="step step-info">Finish</li>
+              <li className="step step-info w-[240px]">Currency</li>
+              <li className="step step-info step-primary w-[240px]">Balance</li>
+              <li className="step step-primary w-[240px]">Finish</li>
             </ul>
           </div>
-
           <div className="*:flex flex-col *:justify-center mt-[160px]">
             <div className="mb-4">
               <div className="w-11 h-11 bg-[#0166FF] rounded-[50%] flex justify-center items-center">
@@ -26,15 +26,17 @@ export const Balance = () => {
             </h1>
             <div className="mb-4">
               <label className="input input-bordered flex items-center gap-2 bg-[#F3F4F6] w-full">
-                <input type="text" className="grow" placeholder="Email" />
+                <input type="text" className="grow" placeholder="Amount" />
               </label>
             </div>
             <p className=" text-xs font-normal flex text-center">
               How much cash do you have in your wallet?
             </p>
-            <button className="btn btn-info w-[100%] rounded-[20px] mt-8">
-              Confirm
-            </button>
+            <Link href="/finish">
+              <button className="btn btn-info w-[100%] rounded-[20px] mt-8">
+                Confirm
+              </button>
+            </Link>
           </div>
         </div>
       </div>
