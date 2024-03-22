@@ -28,6 +28,14 @@ export const Records = ({ category }) => {
     setSelectedType(event.target.value);
   };
 
+  // const RangeSlider = ({ min, max, step = 1, initialValue }) => {
+  //   const [value, setValue] = useState(initialValue);
+
+  //   const onValueChange = (newValue) => {
+  //     setValue(newValue);
+  //   };
+  // };
+
   return (
     <div className="bg-[#F3F4F6] flex justify-center">
       {showAddRecord && <AddRecord close={close} open={open}></AddRecord>}
@@ -147,12 +155,20 @@ export const Records = ({ category }) => {
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
-            {/* <input
+            <input
               type="range"
               min={0}
               max="100"
-              value="40"
-              className="range"
+              value="50"
+              className="range range-secondary bg-[#0166FF] mt-4"
+            />
+            {/* <input
+              type="range"
+              min={min}
+              max={max}
+              step={step}
+              value={value}
+              onChange={(e) => onValueChange(e.target.value)}
             /> */}
           </div>
         </div>
@@ -164,8 +180,8 @@ export const Records = ({ category }) => {
                 <option disabled selected>
                   Newest fisrt
                 </option>
-                <option>Han Solo</option>
-                <option>Greedo</option>
+                <option>Second</option>
+                <option>third</option>
               </select>
             </div>
             <div className="flex justify-between bg-white px-6 py-3 rounded-xl">

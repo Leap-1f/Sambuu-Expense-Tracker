@@ -33,7 +33,7 @@ export const LogIn = () => {
             <p className=" text-base font-normal text-[#0F172A]">
               Don’t have account ?
             </p>
-            <Link href="/singup">
+            <Link href="/signup">
               <p className=" text-base font-normal text-[#0166FF]">Sign up</p>
             </Link>
           </div>

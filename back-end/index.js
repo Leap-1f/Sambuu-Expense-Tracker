@@ -17,41 +17,25 @@ app.get("/users", async (request, response) => {
   response.send(data);
 });
 
-// app.post("/api/signUp", async (req, res) => {
-//   const { name, email, password } = req.body;
-//   try {
-//     // Hash the password before storing it
-//     const hashedPassword = await bcrypt.hash(password, 10);
-//     // Insert user data into the database
-//     const signUpData = await sql`
-//       INSERT INTO users (name, email, password)
-//       VALUES (${name}, ${email}, ${hashedPassword}) RETURNING *;
-//     `;
-//     res.send(signUpData);
-//   } catch (error) {
-//     console.error("Error signing up:", error);
-//     res.status(500).send("Error signing up");
-//   }
-// });
-app.post("/users", async (request, response) => {
+app.post("/api/users", async (request, response) => {
   const { name, email, password } = request.body;
   try {
     const signUpData = await sql`
     INSERT INTO users (name,email,password)
     VALUES (${name}, ${email},${password}) RETURNING *`;
     response.send(signUpData);
+    console.log(name);
+    console.log(email);
+    console.log(password);
   } catch (error) {
-    // Log the error for debugging purposes
     console.error(error);
-    // Send a response to the client indicating an error occurred
+
     response
       .status(500)
       .send({ error: "An error occurred while processing your request." });
   }
 });
-//await sql`INSERT INTO users (name,email,password) VALUES ('ASambuu', 'asambuu@gmail.com','sambuu973742') RETURNING *`;
-//console.log(data);
-//response.send(data);
+
 app.listen(port, () => {
   console.log(`aslaa http://localhost:${port}`);
 });
